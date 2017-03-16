@@ -13,9 +13,12 @@ You don't need to create HTML buttons or a useable application—this exercise i
 functions that will be used in your application. To test it out, try calling the functions in your
 console. For example, try running: clickNextButton() and see what it does. Use lots of console logs!
 ================================ */
+//mapboxgl access token: pk.eyJ1Ijoia3Jpc3RlbnpoYW8iLCJhIjoiY2owYmRwMW8wMDNkNjMycXZpNXRleGh5ZyJ9.ehSSEnz9iyMwUcZO6I8Etw
+// style url: mapbox://styles/kristenzhao/cj0bdtx66001w2rqh6pjvaaqe;
 /* =====================
 STEP 1 - Leaflet Configuration
 ===================== */
+/*
 var map = L.map('map', {
   center: [39.97, -75.16],
   zoom: 11,
@@ -27,6 +30,24 @@ var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{
   maxZoom: 20,
   ext: 'png'
 }).addTo(map);
+*/
+// Mapbox styled map
+mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jpc3RlbnpoYW8iLCJhIjoiY2owYmRwMW8wMDNkNjMycXZpNXRleGh5ZyJ9.ehSSEnz9iyMwUcZO6I8Etw';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/kristenzhao/cj0bdtx66001w2rqh6pjvaaqe',
+  //zoom: 5,
+  //center: [39.97,-75.16]
+});
+/*
+var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 20,
+  ext: 'png'
+}).addTo(map);
+*/
 
 /* ===============================
 STEP 2 - filter functions
